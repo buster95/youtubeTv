@@ -1,0 +1,8 @@
+{
+  "generator-electron": {
+    "promptValues": {
+      "githubUsername": "buster95",
+      "website": "http://buster95.github.io"
+    }
+  }
+}
