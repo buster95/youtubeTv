@@ -34,7 +34,6 @@ const helpSubmenu = [
 ---
 
 ${debugInfo()}`;
-
 			openNewGitHubIssue({
 				user: 'buster95',
 				repo: 'youtubetv',
