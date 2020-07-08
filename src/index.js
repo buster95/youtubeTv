@@ -4,18 +4,18 @@
 const { app, BrowserWindow } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const { is } = require('electron-util');
-// const unhandled = require('electron-unhandled');
-// const debug = require('electron-debug');
+const unhandled = require('electron-unhandled');
+const debug = require('electron-debug');
 // const contextMenu = require('electron-context-menu');
 // const config = require('./config');
 // const menu = require('./menu');
-const packageJson = require('./package.json');
+// const packageJson = require('../package.json');
 
-// unhandled();
-// debug();
+unhandled();
+debug();
 // contextMenu();
 
-app.setAppUserModelId(packageJson.build.appId);
+app.setAppUserModelId('com.tuanisoft.youtubetv');
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.

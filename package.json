@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"description": "Convert your computer in a tv for youtube",
 	"license": "MIT",
+	"main": "src/index.js",
 	"repository": "https://github.com/buster95/youtubeTv",
 	"author": {
 		"name": "Walter Corrales",
@@ -32,7 +33,7 @@
 		"electron": "^8.4.0",
 		"electron-builder": "^21.2.0",
 		"np": "^5.0.3",
-		"xo": "^0.25.3"
+		"xo": "^0.32.1"
 	},
 	"xo": {
 		"envs": [
@@ -46,6 +47,12 @@
 	},
 	"build": {
 		"appId": "com.buster95.youtubetv",
+		"productName": "YoutubeTV On Computer",
+		"icon": "src/static/icon.png",
+		"files": [
+			"src/**/*",
+			"package.json"
+		],
 		"mac": {
 			"category": "public.app-category.social-networking",
 			"darkModeSupport": true
