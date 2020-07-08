@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-spacing, capitalized-comments */
 'use strict';
 const path = require('path');
 const { app, Menu, shell } = require('electron');
@@ -175,4 +176,5 @@ if (is.development) {
 	});
 }
 
+// export menu
 module.exports = Menu.buildFromTemplate(template);

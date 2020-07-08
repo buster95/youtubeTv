@@ -1,12 +1,13 @@
+/* eslint-disable object-curly-spacing, capitalized-comments */
 'use strict';
-const path = require('path');
+// const path = require('path');
 const { app, BrowserWindow } = require('electron');
 const { autoUpdater } = require('electron-updater');
 const { is } = require('electron-util');
 // const unhandled = require('electron-unhandled');
 // const debug = require('electron-debug');
 // const contextMenu = require('electron-context-menu');
-const config = require('./config');
+// const config = require('./config');
 // const menu = require('./menu');
 const packageJson = require('./package.json');
 
@@ -37,12 +38,13 @@ const createMainWindow = async () => {
 		icon: './src/static/icon.png',
 		width: 600,
 		height: 400,
-		frame: true,
+		frame: true
 	});
 	win.maximize();
 	win.removeMenu();
 
 	win.on('ready-to-show', () => {
+		console.log('ready...');
 		win.show();
 	});
 
@@ -71,6 +73,7 @@ app.on('second-instance', () => {
 		if (mainWindow.isMinimized()) {
 			mainWindow.restore();
 		}
+
 		mainWindow.show();
 	}
 });
