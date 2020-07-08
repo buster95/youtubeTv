@@ -1,6 +1,6 @@
 'use strict';
 const path = require('path');
-const {app, Menu, shell} = require('electron');
+const { app, Menu, shell } = require('electron');
 const {
 	is,
 	appMenu,
@@ -49,7 +49,7 @@ if (!is.macos) {
 			type: 'separator'
 		},
 		aboutMenuItem({
-			icon: path.join(__dirname, 'static', 'icon.png'),
+			icon: path.join(__dirname, 'src/static', 'icon.png'),
 			text: 'Created by Walter Corrales'
 		})
 	);

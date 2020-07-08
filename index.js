@@ -14,8 +14,7 @@ const packageJson = require('./package.json');
 // debug();
 // contextMenu();
 
-// app.setAppUserModelId(packageJson.build.appId);
-app.setAppUserModelId('com.buster95.youtubetv');
+app.setAppUserModelId(packageJson.build.appId);
 
 // Uncomment this before publishing your first version.
 // It's commented out as it throws an error if there are no published versions.
@@ -36,8 +35,10 @@ const createMainWindow = async () => {
 		title: app.name,
 		// title: 'YouTube TV',
 		// show: false,
+		icon: './src/static/icon.png',
 		width: 600,
 		height: 400,
+		frame: true,
 	});
 	win.maximize();
 	win.removeMenu();
@@ -47,16 +48,17 @@ const createMainWindow = async () => {
 	});
 
 	win.on('closed', () => {
-		// Dereference the window
-		// For multiple windows store them in an array
 		mainWindow = undefined;
 	});
 
-	// await win.loadFile(path.join(__dirname, 'index.html'));
+	// await win.loadFile(path.join(__dirname, 'src/index.html'), {
+	// 	userAgent: 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1'
+	// });
 	await win.loadURL('https://www.youtube.com/tv#/', {
 		userAgent: 'Mozilla/5.0 (Linux; Tizen 2.3) AppleWebKit/538.1 (KHTML, like Gecko)Version/2.3 TV Safari/538.1'
 	});
 
+	// win.webContents.toggleDevTools();
 	return win;
 };
 
@@ -92,5 +94,6 @@ app.on('activate', () => {
 	mainWindow = await createMainWindow();
 
 	// const favoriteAnimal = config.get('favoriteAnimal');
+	// mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 	// mainWindow.webContents.executeJavaScript(`document.querySelector('header p').textContent = 'Your favorite animal is ${favoriteAnimal}'`);
 })();
