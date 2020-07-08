@@ -1,7 +1,20 @@
 os: osx
 osx_image: xcode10.2
 language: node_js
-node_js: '12'
-script:
-  - npm test
-  - npm run dist
+node_js: "12"
+
+jobs:
+  include:
+    - stage: test
+      script:
+        - npm test
+
+    - stage: deploy
+      script:
+        - npm run dist
+
+stages:
+  - name: test
+    if: type = pull_request
+  - name: deploy
+    if: type = push AND branch = master
