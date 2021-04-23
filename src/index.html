@@ -5,22 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YoutubeTv On Computer</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100%;
-            height: 100%;
-        }
-    </style>
+    <style src="styles.css"></style>
 </head>
 
 <body>
-    <webview id="wv1" src="https://www.youtube.com/tv#/" style="display:inline-flex; width:100%; height:140px" allowpopups plugins nodeintegrationinsubframes nodeintegration></webview>
-    <!-- <webview id="foo" src="https://www.youtube.com/tv#/" style="display:inline-flex; width:100%; height:100%"></webview> -->
+    <webview id="wv1" src="https://www.youtube.com/tv#/" class="webview-style"
+        allowpopups plugins nodeintegrationinsubframes nodeintegration></webview>
 </body>
 
 </html>
